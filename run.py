@@ -20,6 +20,12 @@ def del_contact(contact):
   '''
   contact.delete_contact()
 
+def copy_email(contact,number):
+  '''
+  Function to delete a contact
+  '''
+  contact.copy_email(number)
+
 def find_contact(number):
   '''
   Function that finds a contact by number and returns the contact
@@ -112,6 +118,20 @@ def main():
         print(f"{dl_contact.first_name} {dl_contact.last_name} will be deleted")
         dl_contact = del_contact(dl_contact)
         print("Contact deleted successfully")
+
+      else:
+        print("That contact does not exist")
+
+    elif short_code == 'cp':
+
+      print("Enter the number you want to copy email from")
+
+      find_number = input()
+      if check_existing_contact(find_number):
+        email_contact = find_contact(find_number)
+        print(f"{email_contact.first_name} {email_contact.last_name}  {email_contact.email} email address will be copied")
+        email_contact = copy_email(email_contact,find_number)
+        print("Email address copied successfully")
 
       else:
         print("That contact does not exist")

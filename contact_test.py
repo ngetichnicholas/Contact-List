@@ -10,7 +10,6 @@ class TestContact(unittest.TestCase):
     Args:
         unittest.TestCase: TestCase class that helps in creating test cases
     '''
-    # Items up here .......
 
     def setUp(self):
         '''
